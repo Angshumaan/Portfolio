@@ -20,8 +20,9 @@ from django.conf import settings
 
 
 urlpatterns = [
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('jet/', include('jet.urls', 'jet')),
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
-    path('admin/', admin.site.urls),
+    path('securelogin/', admin.site.urls),
     path('', include('webpages.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
